@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List | Make Your Plan </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="message"></div>
+    <div class="container">
+        <div class="col-25">
+            <h3>Whats Your Plan?</h3>
+        <form action="#">
+            <input type="text" placeholder="What You want to do?" id="task">
+            <button type=""submit id="btn">Add</button>
+        </form>
+        </div>
+        <div class="col-75">
+        <table>
+            <thead>
+                <th>Task</th>
+                <th>Date</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    </div>
+    <script src="https://use.fontawesome.com/69c8bc10e5.js"></script>
+    <script>
+        const message = document.querySelector(".message")
+        const input = document.getElementById("task");
+        const btn = document.getElementById("btn");
+        const tbody = document.querySelector("tbody");
+        const tableEl = document.querySelector("table")
+        const date = new Date();
+        btn.addEventListener("click", (e)=>{
+            const tableRow = document.createElement("tr");
+        if(input.value!==''){
+            const tableData1 = document.createElement("td");
+            const tableData2 = document.createElement("td");
+            const tableData3 = document.createElement("td");
+            tableData1.innerHTML = input.value;
+            tableData2.innerHTML = date.toLocaleDateString();
+            tableData3.innerHTML = '<button class="btn1">Completed<button>'
+            tbody.appendChild(tableRow);
+            tableRow.appendChild(tableData1);
+            tableRow.appendChild(tableData2);
+            tableRow.appendChild(tableData3);}   
+            
+        })
+        const h4 = document.createElement("h4");
+                h4.innerHTML="Congratulation, task Completed!!!";
+                message.appendChild(h4)
+        tableEl.addEventListener("click", (e)=>{
+                if(e.target.classList.contains("btn1")){
+                const btn = e.target;
+                console.log(e.target)
+                btn.closest("tr").remove()
+            }
+                
+                message.style.display = "block"
+                setTimeout(()=>{
+                    message.style.display = '';
+                }, 2000)
+            })
+    </script>
+</body>
+</html>

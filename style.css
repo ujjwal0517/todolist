@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #885db1;
+}
+.col-25{
+    width:40%;
+    margin: 10px auto;
+    padding: 50px;
+    background: rgba(0,0,0,0.1);
+}
+h3{
+    padding: 10px;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+}
+form{
+    text-align: center;
+}
+form #task{
+    font-size: 30px;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+}
+form #btn{
+    font-size:30px;
+    padding: 10px;
+    Border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    
+
+}
+#btn:hover{
+    transform: scale(1.1);
+}
+.col-75{
+    background-color: aliceblue;
+    width: 50%;
+    margin: 10px auto;
+    height: auto;
+    border: 2px solid black;
+    text-align: center;
+}
+.col-75 table{
+    margin: 10px auto;
+    
+}
+.col-75 table th{
+    padding: 30px;
+    
+    
+}
+.message{
+    background-color: green;
+    width: 50%;
+    padding: 30px;
+    margin: 10px auto;
+    display: none;
+}
